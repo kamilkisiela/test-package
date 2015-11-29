@@ -26,7 +26,7 @@ deploy:
   file:
     - "dist/formly-material.js"
     - "dist/formly-material.min.js"
-    - "dist/formly-material.min.map"
+    - "dist/formly-material.min.js.map"
   skip_cleanup: true
   on:
     tags: true
