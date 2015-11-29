@@ -19,7 +19,7 @@ after_success:
   - "npm run coverage:codecov"
   - "npm run coverage:coveralls"
   - "npm run coverage:codacy"
-  - "npm run build"
+  - "npm run semantic-release"
 deploy:
   provider: releases
   api-key: $GH_TOKEN
