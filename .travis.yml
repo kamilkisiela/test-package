@@ -4,6 +4,9 @@ cache:
     - node_modules
 notifications:
   email: false
+branches:
+  only:
+    - master
 node_js:
   - iojs
 before_install:
@@ -18,3 +21,14 @@ after_success:
   - "npm run coverage:codecov"
   - "npm run coverage:coveralls"
   - "npm run coverage:codacy"
+  - "npm run build"
+deploy:
+  provider: releases
+  api-key: $GH_TOKEN
+  file:
+    - "dist/formly-material.js"
+    - "dist/formly-material.min.js"
+    - "dist/formly-material.min.map"
+  skip_cleanup: true
+  on:
+    tags: true
