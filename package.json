@@ -10,7 +10,10 @@
     "coverage:codecov": "cat ./coverage/lcov.info | node_modules/.bin/codecov",
     "coverage:coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage:codacy": "cat ./coverage/lcov.info | ./node_modules/.bin/codacy-coverage",
-    "test": "karma start karma.conf.js --set-env-NODE_ENV=ci"
+    "test": "karma start karma.conf.js --set-env-NODE_ENV=ci",
+    "prepublish": "npm run build",
+    "postpublish": "publish-latest",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -62,6 +65,8 @@
     "karma-sourcemap-loader": "^0.3.6",
     "karma-webpack": "^1.7.0",
     "lodash": "^3.10.1",
+    "publish-latest": "^1.1.2",
+    "semantic-release": "^4.3.5",
     "webpack": "^1.12.9"
   }
 }
